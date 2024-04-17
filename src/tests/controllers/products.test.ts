@@ -52,7 +52,6 @@ describe('Product Controllers', () => {
       testProduct = createdProduct!;
     });
 
-    // Add more test cases for createProduct controller
   });
 
   describe('getAllProducts', () => {
@@ -63,7 +62,6 @@ describe('Product Controllers', () => {
       expect(mockResponse.json).toHaveBeenCalledWith(expect.arrayContaining([expect.objectContaining(testProduct)]));
     });
 
-    // Add more test cases for getAllProducts controller
   });
 
   describe('getProductById', () => {
@@ -76,7 +74,6 @@ describe('Product Controllers', () => {
       expect(mockResponse.json).toHaveBeenCalledWith(expect.objectContaining(testProduct));
     });
 
-    // Add more test cases for getProductById controller
   });
 
   describe('updateProduct', () => {
@@ -90,7 +87,7 @@ describe('Product Controllers', () => {
       mockRequest.body = updatedData;
       mockRequest.params = { id: testProduct._id.toString() };
 
-      // Mock authentication
+    
       const mockToken = jwt.sign({ userId: 'test-user' }, config.jwtSecret);
       mockRequest.headers = { authorization: `Bearer ${mockToken}` };
 
@@ -100,14 +97,13 @@ describe('Product Controllers', () => {
       expect(mockResponse.json).toHaveBeenCalledWith(expect.objectContaining(updatedData));
     });
 
-    // Add more test cases for updateProduct controller
+    
   });
 
   describe('deleteProduct', () => {
     it('should delete a product', async () => {
       mockRequest.params = { id: testProduct._id.toString() };
 
-      // Mock authentication
       const mockToken = jwt.sign({ userId: 'test-user' }, config.jwtSecret);
       mockRequest.headers = { authorization: `Bearer ${mockToken}` };
 
@@ -119,7 +115,5 @@ describe('Product Controllers', () => {
       const deletedProduct = await Product.findById(testProduct._id);
       expect(deletedProduct).toBeFalsy();
     });
-
-    // Add more test cases for deleteProduct controller
   });
 });

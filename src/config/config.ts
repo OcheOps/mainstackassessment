@@ -8,4 +8,4 @@ export const config = {
     port: process.env.PORT || 3000,
 };
 
-export default config; // Add this line to export the config object as a module
+export default config; 

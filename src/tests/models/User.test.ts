@@ -39,5 +39,4 @@ describe('User Model', () => {
     await expect(user2.save()).rejects.toThrow();
   });
 
-  // Add more test cases for the User model
 });

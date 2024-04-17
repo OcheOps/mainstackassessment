@@ -35,8 +35,6 @@ describe('Auth Controllers', () => {
       const user = await User.findOne({ email: userData.email });
       expect(user).toBeTruthy();
     });
-
-    // Add more test cases for register controller
   });
 
   describe('login', () => {
@@ -46,8 +44,6 @@ describe('Auth Controllers', () => {
         password: 'password123',
       };
       mockRequest.body = userData;
-
-      // Create a test user
       const user = new User(userData);
       await user.save();
 
@@ -56,7 +52,5 @@ describe('Auth Controllers', () => {
       expect(mockResponse.status).toHaveBeenCalledWith(200);
       expect(mockResponse.json).toHaveBeenCalledWith(expect.objectContaining({ token: expect.any(String) }));
     });
-
-    // Add more test cases for login controller
   });
 });
