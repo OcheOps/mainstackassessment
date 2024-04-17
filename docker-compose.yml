@@ -5,7 +5,7 @@ services:
     ports:
       - '5000:5000'
     environment:
-      - MONGO_URI=mongodb://mongodb:27017/store
+      - MONGO_URI=mongodb+srv://oche:oche@prismablogr.iqsrw2b.mongodb.net/?retryWrites=true&w=majority&appName=prismablogr
       - JWT_SECRET=tearinmyheart
     depends_on:
       - mongodb
