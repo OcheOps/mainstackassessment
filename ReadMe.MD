@@ -66,15 +66,15 @@ For any questions or inquiries, please contact [ochecodes@gmail.com].
 1. Start the Docker container using the following command:
 
     ```bash
-    docker run -p 3000:3000 mainstack-assessment
+    docker run -p 5000:5000 mainstack-assessment
     ```
 
-    This will start the API on port 3000 inside the Docker container.
+    This will start the API on port 5000 inside the Docker container.
 
 2. Access the API endpoints using the following base URL:
 
     ```
-    http://localhost:3000
+    http://localhost:5000
     ```
 
 ### Stopping the Docker Container
